@@ -38,8 +38,9 @@ function setup() {
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
-
-
+    left=new Ground(width/2-80,630,15,80);
+	right=new Ground(width/2+80,630,15,80);
+	bottom=new Ground(width/2,668,180,15);
 	Engine.run(engine);
   
 }
@@ -51,7 +52,9 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
   drawSprites();
- 
+ left.display();
+ right.display();
+ bottom.display();
 }
 
 function keyPressed() {
